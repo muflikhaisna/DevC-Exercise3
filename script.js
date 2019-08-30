@@ -1,5 +1,5 @@
 function requestJSON(nama = "") {
-	fetch("https://swapi.co/api/people/?format=json&page=1")
+	fetch("https://swapi.co/api/planets/")
 		.then(resnponse => {
 			return resnponse.json();
 		})
@@ -7,7 +7,7 @@ function requestJSON(nama = "") {
 			var arrayJSON = data.results;
 			console.log(arrayJSON);
 			var konten =
-				'<thead><tr class="bg-warning"><th scope="col">Name</th><th scope="col">Height</th><th scope="col">Weight</th><th scope="col">Gender</th></tr></thead>';
+				'<thead><tr class="bg-warning"><th scope="col">Name</th><th scope="col">Rotation Period</th><th scope="col">Orbital Period</th><th scope="col">Diameter</th><th scope="col">Climate</th><th scope="col">Gravity</th><th scope="col">Terrain</th></tr></thead>';
 			for (var i = 0; i < arrayJSON.length; i++) {
 				console.log(i);
 				console.log(arrayJSON[i].name);
@@ -18,13 +18,22 @@ function requestJSON(nama = "") {
 							arrayJSON[i].name +
 							"</td>" +
 							"<td>" +
-							arrayJSON[i].height +
+							arrayJSON[i].rotation_period +
 							"</td>" +
 							"<td>" +
-							arrayJSON[i].mass +
+							arrayJSON[i].orbital_period +
 							"</td>" +
 							"<td>" +
-							arrayJSON[i].gender +
+							arrayJSON[i].diameter +
+							"</td>" +
+							"<td>" +
+							arrayJSON[i].climate +
+							"</td>" +
+							"<td>" +
+							arrayJSON[i].gravity +
+							"</td>" +
+							"<td>" +
+							arrayJSON[i].terrain +
 							"</td>" +
 							"</tr>";
 					}
@@ -34,13 +43,22 @@ function requestJSON(nama = "") {
 						arrayJSON[i].name +
 						"</td>" +
 						"<td>" +
-						arrayJSON[i].height +
+						arrayJSON[i].rotation_period +
 						"</td>" +
 						"<td>" +
-						arrayJSON[i].mass +
+						arrayJSON[i].orbital_period +
 						"</td>" +
 						"<td>" +
-						arrayJSON[i].gender +
+						arrayJSON[i].diameter +
+						"</td>" +
+						"<td>" +
+						arrayJSON[i].climate +
+						"</td>" +
+						"<td>" +
+						arrayJSON[i].gravity +
+						"</td>" +
+						"<td>" +
+						arrayJSON[i].terrain +
 						"</td>" +
 						"</tr>";
 				}
